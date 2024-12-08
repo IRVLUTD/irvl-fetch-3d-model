@@ -1,3 +1,11 @@
+Please add the following to the respective folders
+
+- Add the following to [`src/fetch_ros_IRVL/fetch_description/meshes`](src/fetch_ros_IRVL/fetch_description/meshes)
+  - [3DModels/ATI-9105-NETB.stl](3DModels/ATI-9105-NETB.stl)
+  - [3DModels/fetch_ram_spine_with_mount_and_legion_laptop.stl](3DModels/fetch_ram_spine_with_mount_and_legion_laptop.stl)
+- Add all (*.urdf) in [`urdf/`](./urdf) -> [src/fetch_ros_IRVL/fetch_description/robots](src/fetch_ros_IRVL/fetch_description/robots)
+  - add a symlink from the desired .urdf to fetch.urdf within the same dir
+  - `fetch.urdf` will be read for display purposes
 
 # 📦 Model Sources
 
@@ -9,7 +17,7 @@
 
 ---
 
-# 🛠️ Tools and Software
+# 🛠️ Tools and Software used for making this
 
 1. **FreeCAD Installation**:  
    Install FreeCAD for handling 3D models with the command:  
@@ -30,6 +38,9 @@
 ---
 
 # ✏️ Adjusting Model Origin (ATI NetB)
+
+
+TODO: add images
 
 To shift the origin of the ATI NetB model from one end to the 2D centroid (ignoring height), use the following Python script with `trimesh`:
 
