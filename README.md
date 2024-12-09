@@ -1,3 +1,13 @@
+This repository is only for 3d modelling of the fetch robot in IRVL.
+
+For the sensor and related ros pkgs and scripts, see [https://github.com/IRVLUTD/fetch_ros_IRVL](https://github.com/IRVLUTD/fetch_ros_IRVL) which is a submodule here so that the 3d modelling can be integrated easily with the 
+
+### Setup
+```shell
+git clone --recurse-submodules https://github.com/IRVLUTD/irvl-fetch-3d-model
+cd irvl-fetch-3d-model
+```
+
 Please add the following to the respective folders
 
 - Add the following to [`src/fetch_ros_IRVL/fetch_description/meshes`](src/fetch_ros_IRVL/fetch_description/meshes)
@@ -6,6 +16,82 @@ Please add the following to the respective folders
 - Add all (*.urdf) in [`urdf/`](./urdf) -> [src/fetch_ros_IRVL/fetch_description/robots](src/fetch_ros_IRVL/fetch_description/robots)
   - add a symlink from the desired .urdf to fetch.urdf within the same dir
   - `fetch.urdf` will be read for display purposes
+
+### 🌟 Reference for Visualizing URDF with TF Frames
+
+To visualize the updated URDF with TF frames, **Problem 2** from the following reference has been referred:  
+- [📄 CS 6301 Homework 1 (Fall 2024)](https://yuxng.github.io/Courses/CS6301Fall2024/CS_6301_Homework_1_Fall_2024.pdf)  
+- [🔗 Course Homepage](https://labs.utdallas.edu/irvl/courses/fall-2024-cs-6301/)  
+---
+
+- Once you have the `urdf_tutorial/launch/display_fetch.launch` ready
+
+```shell
+# rm if any exists
+rm -rf build/ devel/;
+
+# 
+catkin_make; source  devel/setup.bash;
+
+# launch the display_fetch.launch
+roslaunch urdf_tutorial display_fetch.launch
+```
+
+TODO:
+Show the video of running rviz with TF frames
+
+
+
+Following changes have been performed to the default ATI net box
+# ✏️ Adjusting Model Origin (ATI NetB)
+
+<div style="display: flex; justify-content: space-around;">
+  <figure style="text-align: center;">
+    <img src="./media/ati/raw-ati-netb.png" alt="ati-netb-pre" style="width: 100%;">
+    <figcaption>Before Origin Shift</figcaption>
+  </figure>
+  <figure style="text-align: center;">
+    <img src="./media/ati/ati-netb-after-origin-shift.png" alt="ati-netb-post" style="width: 100%;">
+    <figcaption>After Origin Shift</figcaption>
+  </figure>
+</div>
+
+
+
+TODO: add images
+
+To shift the origin of the ATI NetB model from one end to the 2D centroid (ignoring height), use the following Python script with `trimesh`:
+
+```python
+import trimesh
+
+# Load the STL file
+mesh = trimesh.load("path_to_your_input_file.stl")
+
+# Get the centroid and create a writable copy
+centroid = mesh.centroid.copy()
+
+# Set the Z-coordinate of the centroid to 0
+centroid[2] = 0.0
+
+# Translate the mesh to align with the modified centroid
+mesh.apply_translation(-centroid)
+
+# Export the updated STL file
+mesh.export("path_to_your_output_file.stl")
+```
+
+
+
+[Blender file](blender/fetch_ram_mount_with_legion.blend):
+- The laptop mount consists of
+  - 2 x [`ram round plates with ball`](3DModels/parts/ram-mount-round-plate-with-ball/Ram%20Mount.stl)
+  - 1 x [`ram spine`](3DModels/parts/RAM-201U-B-spine/ram-201u-b-spine.stl)
+  - 1 x [`tray for holding the laptop created manually`](3DModels/parts/ram_tray_based_on_laptop.stl)
+  - 1 x [`lenovo legion latop 7`](3DModels/parts/legion_centroid.stl)
+- All the previous parts have been assembled to match the shape and pose of the real laptop mount in the fetch robot at IRVL.
+
+
 
 # 📦 Model Sources
 
@@ -37,41 +123,6 @@ Please add the following to the respective folders
 
 ---
 
-# ✏️ Adjusting Model Origin (ATI NetB)
-
-
-TODO: add images
-
-To shift the origin of the ATI NetB model from one end to the 2D centroid (ignoring height), use the following Python script with `trimesh`:
-
-```python
-import trimesh
-
-# Load the STL file
-mesh = trimesh.load("path_to_your_input_file.stl")
-
-# Get the centroid and create a writable copy
-centroid = mesh.centroid.copy()
-
-# Set the Z-coordinate of the centroid to 0
-centroid[2] = 0.0
-
-# Translate the mesh to align with the modified centroid
-mesh.apply_translation(-centroid)
-
-# Export the updated STL file
-mesh.export("path_to_your_output_file.stl")
-```
-
-
-
-### 🌟 Reference for Visualizing URDF with TF Frames
-
-To visualize the updated URDF with TF frames, **Problem 2** from the following reference has been referred:  
-- [📄 CS 6301 Homework 1 (Fall 2024)](https://yuxng.github.io/Courses/CS6301Fall2024/CS_6301_Homework_1_Fall_2024.pdf)  
-- [🔗 Course Homepage](https://labs.utdallas.edu/irvl/courses/fall-2024-cs-6301/)  
-
----
 
 
 License
