@@ -2,13 +2,10 @@
 # 🚀 Overview
 
 - This repository is dedicated to the **3D modeling of the Fetch robot** for use in the IRVL lab.  
-- For sensor-related configurations, ROS packages, and scripts, refer to the [fetch_ros_IRVL repository](https://github.com/IRVLUTD/fetch_ros_IRVL).
-- This repository is included as a submodule here to allow seamless integration with the 3D models.
+- For sensor-related configurations, ROS packages, and scripts, refer to the [fetch_ros_IRVL repository](https://github.com/IRVLUTD/fetch_ros_IRVL) which is included as a submodule here to allow seamless integration with the 3D models.
 ---
 
 ![teaser](./media/real-syn-fetch-model.png)
-
-
 
 
 # ⚙️ Setup
@@ -49,12 +46,7 @@ catkin_make; source  devel/setup.bash;
 roslaunch urdf_tutorial display_fetch.launch
 ```
 
-
-
 https://github.com/user-attachments/assets/ec48406e-708b-45ea-bcaf-88e913b426d8
-
-
-
 
 # 🛠️ Model Modifications
 ### ✏️ Adjusting Model Origin (ATI NetB)
@@ -84,7 +76,6 @@ mesh.apply_translation(-centroid)
 mesh.export("path_to_your_output_file.stl")
 ```
 
-
 ### 💻 Laptop with Mount
 - The laptop mount was designed using the following components:
   - 2 x [`ram round plates with ball`](3DModels/parts/ram-mount-round-plate-with-ball/Ram%20Mount.stl)
@@ -95,7 +86,6 @@ mesh.export("path_to_your_output_file.stl")
 All parts have been assembled in the [Blender](blender/fetch_ram_mount_with_legion.blend) file to replicate the real-world setup of the Fetch robot.
 
 https://github.com/user-attachments/assets/48ac7f68-7e27-4822-a902-edcf329452a4
-
 
 # 📦 Model Sources
 
@@ -126,8 +116,6 @@ https://github.com/user-attachments/assets/48ac7f68-7e27-4822-a902-edcf329452a4
      - 🆓 Free users can only convert **3 files per day** and upload files up to **20 MB**. Paid users get increased quotas and file size limits.
 
 ---
-
-
 
 # 📜 License
 - This project is MIT licensed.
