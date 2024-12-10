@@ -1,0 +1,7 @@
+[submodule "src/urdf_tutorial"]
+	path = src/urdf_tutorial
+	url = https://github.com/ros/urdf_tutorial
+	branch = ros1
+[submodule "src/fetch_ros_IRVL"]
+	path = src/fetch_ros_IRVL
+	url = https://github.com/IRVLUTD/fetch_ros_IRVL
