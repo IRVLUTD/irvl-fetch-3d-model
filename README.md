@@ -49,7 +49,11 @@ catkin_make; source  devel/setup.bash;
 roslaunch urdf_tutorial display_fetch.launch
 ```
 
-https://github.com/user-attachments/assets/9d0b1140-e892-417a-a856-d7aea5c0b86d
+
+
+https://github.com/user-attachments/assets/ec48406e-708b-45ea-bcaf-88e913b426d8
+
+
 
 
 # 🛠️ Model Modifications
@@ -57,7 +61,7 @@ https://github.com/user-attachments/assets/9d0b1140-e892-417a-a856-d7aea5c0b86d
 The ATI NetB model’s origin has been shifted to its 2D centroid (ignoring height) for better alignment.
 Before and After:
 
-
+![](./media/ati/ati-netb-orig-shift.png)
 
 To shift the origin of the ATI NetB model from one end to the 2D centroid (ignoring height), use the following Python script with `trimesh`:
 
@@ -90,12 +94,7 @@ mesh.export("path_to_your_output_file.stl")
 - All the previous parts have been assembled to match the shape and pose of the real laptop mount in the fetch robot at IRVL.
 All parts have been assembled in the [Blender](blender/fetch_ram_mount_with_legion.blend) file to replicate the real-world setup of the Fetch robot.
 
-
-
-
-https://github.com/user-attachments/assets/25726781-dcd2-4ab7-bf6f-e154b3bc6117
-
-
+https://github.com/user-attachments/assets/48ac7f68-7e27-4822-a902-edcf329452a4
 
 
 # 📦 Model Sources
