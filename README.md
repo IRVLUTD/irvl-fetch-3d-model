@@ -31,7 +31,7 @@ Make sure the required files are placed in the correct directories:
     - add a symlink from the desired .urdf to fetch.urdf within the same dir
     - `fetch.urdf` will be read for display purposes
 
-### Step-3: 🌟 Reference for Visualizing URDF with TF Frames
+### Step-3️⃣: 🌟 Reference for Visualizing URDF with TF Frames
 
 To visualize the updated URDF with TF frames, **Problem 2** from the following reference has been referred:  
 - [📄 CS 6301 Homework 1 (Fall 2024)](https://yuxng.github.io/Courses/CS6301Fall2024/CS_6301_Homework_1_Fall_2024.pdf)  
@@ -49,8 +49,7 @@ catkin_make; source  devel/setup.bash;
 roslaunch urdf_tutorial display_fetch.launch
 ```
 
-
-
+https://github.com/user-attachments/assets/9d0b1140-e892-417a-a856-d7aea5c0b86d
 
 
 # 🛠️ Model Modifications
@@ -58,7 +57,7 @@ roslaunch urdf_tutorial display_fetch.launch
 The ATI NetB model’s origin has been shifted to its 2D centroid (ignoring height) for better alignment.
 Before and After:
 
-<div style="display: flex; justify-content: space-around;"> <figure style="text-align: center;"> <img src="./media/ati/raw-ati-netb.png" alt="ati-netb-pre" style="width: 100%;"> <figcaption>🔴 Before Origin Shift</figcaption> </figure> <figure style="text-align: center;"> <img src="./media/ati/ati-netb-after-origin-shift.png" alt="ati-netb-post" style="width: 100%;"> <figcaption>🟢 After Origin Shift</figcaption> </figure> </div>
+
 
 To shift the origin of the ATI NetB model from one end to the 2D centroid (ignoring height), use the following Python script with `trimesh`:
 
@@ -90,6 +89,13 @@ mesh.export("path_to_your_output_file.stl")
   - 1 x [`lenovo legion latop 7`](3DModels/parts/legion_centroid.stl)
 - All the previous parts have been assembled to match the shape and pose of the real laptop mount in the fetch robot at IRVL.
 All parts have been assembled in the [Blender](blender/fetch_ram_mount_with_legion.blend) file to replicate the real-world setup of the Fetch robot.
+
+
+
+
+https://github.com/user-attachments/assets/25726781-dcd2-4ab7-bf6f-e154b3bc6117
+
+
 
 
 # 📦 Model Sources
